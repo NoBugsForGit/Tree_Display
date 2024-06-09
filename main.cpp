@@ -1,11 +1,7 @@
 #include "Tree.hpp"
 #include <string>
-#include <stack>
-#include <iomanip>
-#include <deque>
 
 #define SPACE ' '
-
 
 using namespace std;
 
@@ -86,9 +82,8 @@ void printTreeByLevels(Tree<int> *root)
     root->calculateCoor();
     queue<Tree<int> *> q;
     q.push(root);
-    int leafCount = root->countLeaves();
 
-    cout << string(leafCount, ' ');
+    cout << string(root->coor*2, ' ');
     cout << "{" << root->val << "}" << endl;
 
     while (!q.empty())
